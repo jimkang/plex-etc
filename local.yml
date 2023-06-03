@@ -1,0 +1,18 @@
+# Based on https://gist.github.com/tzapu/abe4505f14b0c888c8e3b66e598f8bef
+version: '1.0'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=America/New York
+      - PLEX_CLAIM=
+      - PLEX_UID=1000
+      - PLEX_GID=1000
+    hostname: smallcatlabs-dev
+    volumes:
+      - /home/gcw/plex-etc/config:/config
+      - /home/gcw/plex-etc/transcode:/transcode
+      - /nfs/external-storage/media:/data
