@@ -10,4 +10,4 @@ This is my Plex and related stuff Docker compose config.
       PLEX_CLAIM=claim-whatever
       DATADIR=/nfs/directory/with/your/media
 
-- docker compose up
+- `docker compose up`
